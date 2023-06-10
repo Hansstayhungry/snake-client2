@@ -1,29 +1,9 @@
 //play.js
 
-const {connect} = require("./client");
+const { setupInput } = require("./input");
+const { connect } = require("./client");
 
-// console.log("Player Connecting ...");
+console.log("Connecting ...");
 connect();
-
-const handleUserInput = function (data) {
-  // ctrl+c
-  if (data === '\u0003') {
-    process.exit();
-  }
-};
-
-
-// setup interface to handle user input from stdin
-
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-
-  stdin.on("data", handleUserInput);
-
-  return stdin;
-};
 
 setupInput();
