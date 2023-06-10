@@ -15,6 +15,9 @@ const handleUserInput = function (data) {
   if (data === 'd') {
     connection.write("Move: right")
   };
+  if (data === '1') {
+    connection.write("Say: Fear nothing")
+  };
 };
 
 // setup interface to handle user input from stdin
